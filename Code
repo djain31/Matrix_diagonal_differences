@@ -1,13 +1,22 @@
+# input for number of rows in an matrix. which will result in (n*n) matrix
 n = input()
+
+#Creating an empty list.
 arr=[]
 
+# for given number of row. get the inputs for first row in space interval.
+# Splitting the input for each row using split()
+# appending that row (as a list) to the main arr list
 for _ in range(int(n)):
     temp = input().split()
     temp = [int(x) for x in temp]
     arr.append(temp)
+
 s1,s2 = 0,0
+
 
 for i in range(int(n)):
     s1 += arr[i][i]
     s2 += arr[-i-1][i]
+
 print (abs(s1-s2))
